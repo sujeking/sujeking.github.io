@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Document</title>
+        <style type="text/css">
+            html,body {
+                padding: 0;
+                margin: 0;
+                height: 100%;
+                width: 100%;
+            }
+
+            body {
+            }
+
+            .page {
+                display: flex;
+                flex-direction: row;
+            }
+
+            .menu {
+                width: 5%;
+                background-color: #0E0E0E;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-around;
+            }
+
+            @font-face {
+                font-family: "cjs";
+                src: url(font/cjs.ttf);
+            }
+
+            .body {
+                background: url(imgs/mainbg.png) no-repeat;
+                background-size: cover;
+                width: 95%;
+                height: 100%;
+                font-family: cjs;
+                font-size: 90px;
+                display: flex;
+                flex-direction: column;
+                /*justify-content: space-between;*/
+                align-items: center;
+            }
+
+            .logo {
+                margin: 60px 80px;
+                float: left;
+                align-self: flex-start;
+                z-index: 1;
+            }
+
+            .title {
+                margin-top: 3%;
+                z-index: 1;
+            }
+
+            .menu_item img {
+                width: 35px;
+            }
+
+            .menu_item {
+                align-self: center;
+                order: -1;
+            }
+
+            .about {
+                order: 99;
+            }
+
+            .tipbg {
+                height: 100%;
+                width: 95%;
+                left: 5%;
+                position: fixed;
+                background: url(imgs/tip.png);
+            }
+
+            .qqh_input {
+                display: flex;
+            }
+
+            .qqh_passwd {
+                height: 45px;
+                line-height: 64px;
+                margin-right: 15px;
+                border: none;
+                padding-left: 15px;
+                font-size: 16px;
+                width: 233px;
+                z-index: 1;
+            }
+
+            input::-webkit-input-placeholder {
+                /* WebKit browsers*/
+                color: #9B9B9B;
+                opacity: .6;
+            }
+
+            .qqh_unlock_btn {
+                height: 45px;
+                width: 107px;
+                font-size: 16px;
+                background-color: #000000;
+                color: white;
+                border: none;
+                z-index: 1;
+                border-radius: 2px;
+            }
+        </style>
+    </head>
+    <body class="page">
+        <div class="menu">
+            <a class="menu_item" href="">
+                <img src="imgs/enter.png" alt="">
+            </a>
+            <a class="menu_item" href="">
+                <img src="imgs/msg.png" alt="">
+            </a>
+            <a class="menu_item about" href="">
+                <img src="imgs/aboutus.png" alt="">
+            </a>
+        </div>
+        <div class="body">
+            <img class="logo" src="imgs/logo.png" alt="">
+            <div class="title">悄悄话表白</div>
+            <div class="qqh_input">
+                <input class="qqh_passwd" type="text" placeholder="输入表白密码阅读">
+                <button class="qqh_unlock_btn">解蜜</button>
+            </div>
+        </div>
+        <div class="tipbg"></div>
+    </body>
+</html>
