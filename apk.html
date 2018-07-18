@@ -22,28 +22,48 @@
 			border: 0;
 			color: white;
 			width: 230px;
-			height: 50px;
-			font-size: 25px;
-			margin-bottom: 100px;
-			background-image: -webkit-linear-gradient(#49A1F3 0%, #72CDF9 100%);
+			height: 45px;
+			font-size: 17px;
+			margin-bottom: 200px;
+			background-color: black;
+/*			background-image: -webkit-linear-gradient(#49A1F3 0%, #72CDF9 100%);
 			background-image: -o-linear-gradient(#49A1F3 0%, #72CDF9 100%);
 			background-image: linear-gradient(#49A1F3 0%, #72CDF9 100%);
-			display: flex;
+*/			display: flex;
 			justify-content: center;
-			align-items:flex-end;
+			align-items:center;
 			text-decoration: none;
-			padding-bottom: 10px;
 			border-radius: 5px;
-			box-shadow: 0 5px 5px rgba(0,0,0,0.2);
+			box-shadow: 0 5px 10px rgba(0,0,0,0.2);
 		}
 		.btn_icon {
-			height:40px;
+			height:25px;
 			padding-right: 10px;
 		}
 		.wxtip{background: rgba(0,0,0,0.8); text-align: center; position: fixed; left:0; top: 0; width: 100%; height: 100%; z-index: 998;display: none;}
-		.wxtip-icon{width: 52px; height: 67px; background: url(http://img.caibaojian.com/uploads/2016/01/weixin-tip.png) no-repeat; display: block; position: absolute; right: 30px; top: 20px;}
+		.wxtip-icon{width: 52px; height: 67px; background: url(./weixin-tip.png) no-repeat; display: block; position: absolute; right: 30px; top: 20px;}
 		.wxtip-txt{padding-top: 107px; color: #fff; font-size: 16px; line-height: 1.5;}
 	</style>
+	<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
+	<script type="text/javascript">
+		$(function() {
+			var ua = navigator.userAgent;
+			var isWeixin = !!/MicroMessenger/i.test(ua);
+			if (isWeixin) {
+				var ele = $('#downloada')[0];
+				var tip = $('.wxtip');
+				tip.click(()=>{
+					tip.css('display','none');
+				});
+				ele.onclick = function() {
+					window.event? window.event.returnValue = false : e.preventDefault();
+					document.getElementById('JweixinTip').style.display='block';
+				}
+			} else {
+				window.location.href='./skhr.apk';
+			}
+		});
+	</script>
 </head>
 <body>
 	<div class="wxtip" id="JweixinTip">
@@ -59,19 +79,4 @@
 		下载
 	</a>
 </body>
-
-<script type="text/javascript">
-	var ele = document.getElementById('downloada');
-	var ua = navigator.userAgent;
-	var isWeixin = !!/MicroMessenger/i.test(ua);
-	if(isWeixin){
-	ele.onclick=function(e){
-	window.event? window.event.returnValue = false : e.preventDefault();
-	document.getElementById('JweixinTip').style.display='block';
-	}
-	document.getElementById('JweixinTip').onclick=function(){
-	this.style.display='none';
-	}
-	}
-</script>
 </html>
