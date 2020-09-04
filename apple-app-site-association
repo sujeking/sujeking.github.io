@@ -2,14 +2,6 @@
     "applinks":{
         "apps":[],
          "details":[
-             {
-                 "appID": "T65J544ANJ.com.weizhegou.shop", 
-                 "paths": ["/wzgAppOpen/*"]
-            },
-             {
-                 "appID": "45977DN246.com.yly.yly", 
-                 "paths": ["/ylyAppOpen/*"]
-            },
             {
                 "appID": "QPRJACCNNR.mall.weizhegou.service",
                 "paths": ["/laoWuAppOpenError/*"]
